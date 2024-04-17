@@ -17,6 +17,7 @@ const options = {
 
     const startButton = document.querySelector('[data-start]');
     startButton.removeAttribute('disabled');
+    clearInterval(countdownInterval); // Zatrzymanie aktualnego odliczenia
   },
 };
 
@@ -60,6 +61,8 @@ startButton.addEventListener('click', () => {
   }
 
   startButton.setAttribute('disabled', true);
+
+  clearInterval(countdownInterval); // Zatrzymanie aktualnego odliczenia przed rozpoczęciem nowego
 
   countdownInterval = setInterval(() => {
     const msRemaining = selectedDate - new Date();

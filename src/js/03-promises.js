@@ -11,14 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < amount; i++) {
       createPromise(i + 1, delay + i * step)
         .then(({ position, delay }) => {
-          Notiflix.Notify.Success(
-            `✅ Fulfilled promise ${position} in ${delay}ms`
-          );
+          console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
         })
         .catch(({ position, delay }) => {
-          Notiflix.Notify.Success(
-            `❌ Rejected promise ${position} in ${delay}ms`
-          );
+          console.log(`❌ Rejected promise ${position} in ${delay}ms`);
         });
     }
   });
